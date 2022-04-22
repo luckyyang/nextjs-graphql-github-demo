@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, gql, HttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-const token = process.env.GITHUB_GRAPHQL_APIKEY;
+const token = process.env.NEXT_PUBLIC_GITHUB_GRAPHQL_APIKEY;
 
 const authLink = setContext((_, { headers }) => {
   return {
