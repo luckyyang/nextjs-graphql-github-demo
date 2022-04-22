@@ -27,3 +27,7 @@ Refer to [this blog](https://dev.to/k4u5h4l/using-github-oauth-with-next-js-4e8o
 ```bash
 yarn dev
 ```
+
+## Reference
+
+- [NextAuth.js Docs](https://next-auth.js.org/getting-started/introduction)
