@@ -20,7 +20,9 @@ Copy the .env.local.example file in this directory to .env.local (which will be 
 cp .env.local.example .env.local
 ```
 
-Refer to [this blog](https://dev.to/k4u5h4l/using-github-oauth-with-next-js-4e8o) to get github Client ID and Client Secret, then put them to `.env.local`
+Refer to [this doc](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create personal access token, then put it to `.env.local`
+
+Refer to [this blog](https://dev.to/k4u5h4l/using-github-oauth-with-next-js-4e8o) to get github Client ID and Client Secret, then put them to `.env.local`, ignore this if you do not need github oauth.
 
 ### 3. Run
 
@@ -31,3 +33,4 @@ yarn dev
 ## Reference
 
 - [NextAuth.js Docs](https://next-auth.js.org/getting-started/introduction)
+- [Github GraphQL API](https://docs.github.com/en/graphql)
