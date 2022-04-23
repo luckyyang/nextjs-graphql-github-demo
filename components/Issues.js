@@ -33,29 +33,7 @@ export default function Countries() {
     useEffect(() => {
       const fetchData = async () => {
         setLoading(true);
-        const { data } = await client.query({
-          query: gql`
-            query {
-              repository(owner: "octocat", name: "Hello-World") {
-                issues(last: 20, states: CLOSED) {
-                  edges {
-                    node {
-                      title
-                      url
-                      labels(first: 5) {
-                        edges {
-                          node {
-                            name
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          `,
-        });
+        const { data } = await client.query({ query: QUERY });
         console.log(" ====== data: ", data);
         if (data) setIssues(data.repository.issues.edges);
         setLoading(false);
