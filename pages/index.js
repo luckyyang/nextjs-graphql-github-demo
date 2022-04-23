@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import Link from "next/link";
 
 export default function Home({ issues = [] }) {
   const { data: session, status } = useSession();
@@ -10,7 +11,18 @@ export default function Home({ issues = [] }) {
   console.log("issues", issues);
   return (
     <div>
-      <h1>Simple Github OAuth Demo</h1>
+      <h1>Simple Github GraphQL Demo</h1>
+      <div style={{ display: "flex" }}>
+        <div style={{ marginRight: 10 }}>
+          <Link href="/">Static rendering</Link>
+        </div>
+        <div style={{ marginRight: 10 }}>
+          <Link href="/client-side">Client side rendering</Link>
+        </div>
+        <div style={{ marginRight: 10 }}>
+          <Link href="/server-side">Server side rendering</Link>
+        </div>
+      </div>
 
       {!session ? (
         <>
@@ -33,12 +45,8 @@ export default function Home({ issues = [] }) {
       <div>
         {issues.map((issue) => (
           <div key={issue.code}>
-            <h3>
-              {issue.node.title}
-            </h3>
-            <p>
-              {issue.node.url}
-            </p>
+            <h3>{issue.node.title}</h3>
+            <p>{issue.node.url}</p>
           </div>
         ))}
       </div>
